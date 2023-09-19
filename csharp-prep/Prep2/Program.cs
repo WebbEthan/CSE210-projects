@@ -42,7 +42,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Don't give up you will get it next time");
+            Console.WriteLine("You failed :( Don't give up though you will get it next time");
         }
     }
 }
