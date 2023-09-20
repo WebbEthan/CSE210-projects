@@ -6,6 +6,7 @@ class Program
     static List<float> numbers = new List<float>();
     static void Main(string[] args)
     {
+        // Gets a list of numbers from the user
         Console.WriteLine("Enter a list of numbers, type 0 when finished");
         float NewNumber = 1;
         while (NewNumber != 0)
@@ -20,7 +21,7 @@ class Program
             }
             else
             {   
-                Console.WriteLine("That was now a number you put in please enter a real number.");
+                Console.WriteLine("That was not a number you put in please enter a real number.");
             }
         }
         // Calculates and output
