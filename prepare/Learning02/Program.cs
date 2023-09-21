@@ -10,7 +10,7 @@ class Program
         Job Job2 = new Job("Manager", "Apple", "2022-2023");
 
         // Creates the resume
-        resume myResume = new resume("Ethan", new List<Job>() { Job1, Job2});
+        Resume myResume = new Resume("Ethan", new List<Job>() { Job1, Job2});
         myResume.Display();
     }
 }

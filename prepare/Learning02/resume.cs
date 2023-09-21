@@ -1,6 +1,6 @@
-public class resume
+public class Resume
 {
-    public resume(string name, List<Job> Jobs)
+    public Resume(string name, List<Job> Jobs)
     {  
         _name = name;
         _Jobs = Jobs;
