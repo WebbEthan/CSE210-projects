@@ -4,11 +4,11 @@ namespace Journal
     {
         // Posible prompts for new entrys
         private static string[] Prompts =  new string[]{
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "What could I have done better today?",
+            "What did I enjoy the most today?",
+            "What can I pray about today?",
+            "How am I feeling?",
+            "What do I plan on doing now that today is over?"
         };
         // This is the Entry currenty displayed
         private static List<Entry> CurrentEntrys = new List<Entry>();
@@ -24,6 +24,7 @@ namespace Journal
                 Console.WriteLine("4. Save");
                 Console.WriteLine("5. Quit");
                 Console.WriteLine("Enter Number Or Keyword...");
+
                 // Parses the input into various actions
                 switch(Console.ReadLine().ToLower())
                 {
@@ -34,6 +35,7 @@ namespace Journal
                         NewEntry();
                         break;
                     case "2":
+                        // Runs display in each Entry stored in Current Entrys
                         foreach (Entry entry in CurrentEntrys)
                         {
                             entry.Display();
@@ -41,6 +43,7 @@ namespace Journal
                         }
                         break;
                     case "display":
+                        // Runs display in each Entry stored in Current Entrys
                         foreach (Entry entry in CurrentEntrys)
                         {
                             entry.Display();
@@ -69,8 +72,11 @@ namespace Journal
         }
         private static void NewEntry()
         {
+            // Creates a new Entry
             Random random = new Random();
             Entry writen = new Entry(Prompts[random.Next(0, Prompts.Length-1)], DateTime.Now.Date.ToString(), null);
+
+            // Opens the Editor
             writen.Edit();
             CurrentEntrys.Add(writen);
         }

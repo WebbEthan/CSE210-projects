@@ -6,6 +6,7 @@ namespace Journal
         public const string DefaultFileAddress = @"C:\Users\ethan\Desktop\CSE Homework\CSE210\CSE210-projects\prove\Develop02\JournalEntrys\entry.txt";
         public static void SaveFile(List<Entry> entrys)
         {
+            // Checks that there is data to be saved
             if (entrys != null && entrys.Count > 0)
             {
                 // assembles data to save
@@ -16,6 +17,7 @@ namespace Journal
                     lines[i + 1] = entrys[entry].Date;
                     lines[i + 2] = entrys[entry].Article;
                 }
+                // Writes assembled data to the file
                 File.WriteAllLines(DefaultFileAddress, lines);
                 Console.WriteLine("Succesfully Saved");
             }
@@ -36,6 +38,7 @@ namespace Journal
                     string _title = FileData[i];
                     string _date = FileData[i + 1];
                     string _article = FileData[i + 2];
+                    // Assembles the data in an Entry class and adds it to the returned list
                     data.Add(new Entry(_title, _date, _article));
                 }
                 return true;
