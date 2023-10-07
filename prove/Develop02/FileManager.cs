@@ -26,6 +26,7 @@ namespace Journal
 
             // Writes assembled data to the file
             File.WriteAllLines(DefaultFileAddress, lines);
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Succesfully Saved");
         }
         public static bool LoadFile(out List<string> prompts, out List<Entry> data)
