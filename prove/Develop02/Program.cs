@@ -1,3 +1,16 @@
+/*
+    * This is a simple Journaling program that prompts the user to write in there journal
+        it allows the user to add and remove Journal prompts that are used when they start a new entry
+        the prompts and the entrys are then saved to a text file
+
+    * The save file is loaded when the program starts automatically or can be loaded manually by the user
+    * the save file also contains all the prompts that the user has.
+
+    * The user can also display all the Journal entrys
+
+    * The program also uses color cordination to make it as easy as prosible for the user to understand what is
+        happening without leaving a console or creating a renderer
+*/
 namespace Journal
 {
     static class Program
@@ -18,7 +31,7 @@ namespace Journal
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("-----------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Please select what you would like to do.");
+                Console.WriteLine("Writing in your jounal is a good activity you can do this.");
                 Console.WriteLine("1. Write");
                 Console.WriteLine("2. Display");
                 Console.WriteLine("3. Load");
