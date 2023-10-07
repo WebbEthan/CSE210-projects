@@ -174,12 +174,19 @@ namespace Journal
         }
         private static void NewEntry()
         {
-            if (++PreviousPrompt >= Prompts.Count)
+            // Selects the prompt ensuring you don't get the same prompt twice
+            Random random = new Random();
+            while (true)
             {
-                PreviousPrompt = 0;
+                int newPrompt= random.Next(0, Prompts.Count - 1);
+                if (PreviousPrompt != newPrompt)
+                {
+                    PreviousPrompt = newPrompt;
+                    break;
+                }
             }
             // Creates a new Entry
-            Entry writen = new Entry(Prompts[PreviousPrompt], DateTime.Now.Date.ToString(), null);
+            Entry writen = new Entry(Prompts[PreviousPrompt], DateTime.Now.ToShortDateString(), null);
 
             // Opens the Editor
             writen.Edit();
