@@ -18,15 +18,15 @@ public class Scripture
         while(true)
         {
             Console.Clear();
-            Console.WriteLine("Press the up arrow to increase the difficulty, Press excape to return change the scripture.");
+            Console.WriteLine("Press any key to increase the difficulty, Press excape to return change the scripture.");
             Console.WriteLine(_scriptureReference);
             Console.WriteLine(TextRewriter.FormatOutput(_displayText));
-            
+
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.Escape:
                     return;
-                case ConsoleKey.UpArrow:
+                default:
                     TextRewriter.RemoveWords(ref _displayText, ref _shownWords, 3);
                     break;
                     
