@@ -17,11 +17,13 @@ public class Scripture
     {
         while(true)
         {
+            // Displays the scripture
             Console.Clear();
             Console.WriteLine("Press any key to increase the difficulty, Press excape to return change the scripture.");
             Console.WriteLine(_scriptureReference);
             Console.WriteLine(TextRewriter.FormatOutput(_displayText));
 
+            // Handles the user input
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.Escape:
