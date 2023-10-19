@@ -3,7 +3,7 @@ namespace Journal
     using System.IO;
     public static class FileManager
     {
-        public const string DefaultFileAddress = @"C:\Users\ethan\Desktop\CSE Homework\CSE210\CSE210-projects\prove\Develop02\JournalEntrys\entry.txt";
+        public const string DefaultFileAddress = @"JournalEntrys\entry.txt";
         public static void SaveFile(List<Entry> _entrys)
         {
             // Initializes data to save
