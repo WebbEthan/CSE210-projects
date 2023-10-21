@@ -27,6 +27,8 @@ public class Scripture
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.Escape:
+                    Console.Clear();
+                    Console.WriteLine("Enter a scripture for example ( 1 Nephi 10:15 ), type notes to access your notes, or type quit to close the program.");
                     return;
                 default:
                     TextRewriter.RemoveWords(ref _displayText, ref _shownWords, 3);
