@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning04 World!");
+        MathAssignment math = new("Bob", "Quantum", 82.4f, "1-20");
+        EnglishAssignment english = new("Jeff", "3088 Conflicts", "The Invention of time travel.");
+
+        math.GetHomework();
+        english.GetHomework();
     }
 }
