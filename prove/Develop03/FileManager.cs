@@ -41,11 +41,19 @@ public static class FileManager
     }
     public static string[] ListNotes()
     {
-        string[] notes = Directory.GetFiles(@"bin\Debug\net7.0\Saves");
-        for (int i = 0; i < notes.Length; i++)
+        if (Directory.Exists(@"bin\Debug\net7.0\Saves"))
         {
-            notes[i] = notes[i].Substring(23, notes[i].Length - 27);
+            string[] notes = Directory.GetFiles(@"bin\Debug\net7.0\Saves");
+            for (int i = 0; i < notes.Length; i++)
+            {
+                notes[i] = notes[i].Substring(23, notes[i].Length - 27);
+            }
+            return notes;
         }
-        return notes;
+        else
+        {
+            Directory.CreateDirectory(@"bin\Debug\net7.0\Saves");
+            return new string[0];
+        }
     }
 }

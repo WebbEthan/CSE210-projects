@@ -10,16 +10,16 @@ class Program
             switch (address)
             {
                 case "notes":
-                    Console.Clear();
-                    string[] notes = FileManager.ListNotes();
-                    foreach(string noteName in notes)
-                    {
-                        Console.WriteLine(noteName);
-                    }
-                    Console.WriteLine("Enter note title to access note, type new to create a new note, or type back nothing to to back.");
                     string note = "";
                     while (note != "back")
                     {
+                        string[] notes = FileManager.ListNotes();
+                        Console.Clear();
+                        foreach(string noteName in notes)
+                        {
+                            Console.WriteLine(noteName);
+                        }
+                        Console.WriteLine("Enter note title to access note, type new to create a new note, or type back nothing to to back.");
                         note = Console.ReadLine();
                         switch (note)
                         {
