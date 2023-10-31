@@ -3,7 +3,7 @@ namespace Journal
     using System.IO;
     public static class FileManager
     {
-        public const string DefaultFileAddress = @"bin\Debug\net7.0\JournalEntrys\entry.txt";
+        public const string DefaultFileAddress = @"bin\Debug\net7.0\entry.txt";
         public static void SaveFile(List<Entry> _entrys)
         {
             // Initializes data to save
