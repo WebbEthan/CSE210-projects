@@ -2,10 +2,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
-        Console.WriteLine("Enter a scripture for example ( 1 Nephi 10:15 ), type notes to access your notes, or type quit to close the program.");
         while (true)
-        {
+        {  
+            Console.Clear();
+            Console.WriteLine("Enter a scripture for example ( 1 Nephi 10:15 ), type notes to access your notes, or type quit to close the program.");
             string address = Console.ReadLine();
             switch (address)
             {
