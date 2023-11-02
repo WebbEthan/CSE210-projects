@@ -1,10 +1,9 @@
 public class Activity
 {
-    protected List<string> Prompts;
     protected float Durration;
-    public static void LoadingBar(float Duration)
+    public static void LoadingBar(float Time)
     {
-        while (Duration > 0)
+        while (Time > 0)
         {
             Console.Write("\r .  ");
             Thread.Sleep(333);
@@ -12,7 +11,7 @@ public class Activity
             Thread.Sleep(333);
             Console.Write("\r ...");
             Thread.Sleep(334);
-            Duration--;
+            Time--;
         }
     }
     public static void CountDown(float Time)
@@ -24,12 +23,12 @@ public class Activity
             Time--;
         }
     }
-    public static string GetResponse(out float ElapsedResponseTime)
+    protected static string GetResponse(out float ElapsedResponseTime)
     {
         DateTime current = DateTime.Now;
         string response = Console.ReadLine();
 
-        ElapsedResponseTime = (float)DateTime.Now.Subtract(current).TotalMilliseconds;
+        ElapsedResponseTime = (float)DateTime.Now.Subtract(current).TotalSeconds;
         return response;
     }
 }

@@ -3,10 +3,6 @@ public class BreathingActivity : Activity
     public BreathingActivity()
     {
         // Constructs Data
-        Prompts = new List<string> 
-        {
-
-        };
         Console.Clear();
         Console.WriteLine("How Many Seconds Would You Like To Do This - min 8 secs?");
         Durration = float.Parse(Console.ReadLine());
