@@ -6,6 +6,7 @@ public class ReflectionActivity : Activity
     {
         // Constructs Data
         Console.Clear();
+        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
         Console.WriteLine("How Many Seconds Would You Like To Do This?");
         Durration = float.Parse(Console.ReadLine());
         // Runs Activity
@@ -33,25 +34,28 @@ public class ReflectionActivity : Activity
     private void _run()
     {
         Console.Clear();
-        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-        Thread.Sleep(2000);
         Random rd = new Random();
         //Main question
         Console.Clear();
         Console.WriteLine(_prompts[rd.Next(0, _prompts.Count - 1)]);
-        Console.WriteLine("Please take a second to reflect");
+        Console.WriteLine("Please take a second to reflect, Press any key to continue");
+        Console.ReadKey();
         Console.WriteLine("-----------------------------------------------------------");
-        while (Durration > 0)
+        float TempDurration = Durration;
+        while (TempDurration > 0)
         {
             LoadingBar(3);
             //Follow up questions
             Console.WriteLine("\r" + _followUps[rd.Next(0, _followUps.Count - 1)]);
             Console.WriteLine("Please write your response.");
             GetResponse(out float ElapsedTime);
-            Durration -= ElapsedTime + 3;
+            TempDurration -= ElapsedTime + 3;
         }
         Console.Clear();
-        Console.WriteLine("Keep doing these exersises more everyday to progress.");
+        Console.WriteLine("Well Done.");
+
         LoadingBar(3);
+
+        Console.WriteLine($"You have completed {Durration}secs of reflection activitys.");
     }
 }

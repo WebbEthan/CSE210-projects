@@ -4,6 +4,7 @@ public class ListeningActivity : Activity
     {
         // Constructs Data
         Console.Clear();
+        Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
         Console.WriteLine("How Many Seconds Would You Like To Do This?");
         Durration = float.Parse(Console.ReadLine());
         // Runs Activity
@@ -21,9 +22,8 @@ public class ListeningActivity : Activity
     private void _run()
     {
         Console.Clear();
-        Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-        Thread.Sleep(2000);
         Random rd = new Random();
+        int ResponseCount = 0;
         //Questions
         while (Durration > 0)
         {
@@ -39,11 +39,14 @@ public class ListeningActivity : Activity
             {
                 response.Add(GetResponse(out float responseTime));
                 totalResponseTime += responseTime;
+                ResponseCount++;
             }
             _responses.Add(response);
             Durration-=10;
         }
         //Display responses
+        Console.WriteLine($"\nTotal of {ResponseCount} responses");
+        Thread.Sleep(1000);
         foreach (List<string> response in _responses)
         {
             Console.WriteLine($"\n{response[0]}");
@@ -55,7 +58,7 @@ public class ListeningActivity : Activity
         LoadingBar(6);
         //Close activity
         Console.Clear();
-        Console.WriteLine("Keep doing these exersises more everyday to progress.");
+        Console.WriteLine("Well Done.");
         LoadingBar(3);
     }
 }
