@@ -9,13 +9,20 @@ public class EternalGoal : Goal
     }
     public EternalGoal()
     {
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("What do you want to name your goal?");
+        Console.ForegroundColor = ConsoleColor.White;
         _name = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Describe your goal...");
+        Console.ForegroundColor = ConsoleColor.White;
         _description = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("How many points should this goal be?");
+        Console.ForegroundColor = ConsoleColor.White;
         _points = int.Parse(Console.ReadLine());
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Goal added");
     }
     private int _recordedTimes = 0;

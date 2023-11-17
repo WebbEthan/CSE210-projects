@@ -11,17 +11,28 @@ public class ChecklistGoal : Goal
     }
     public ChecklistGoal()
     {
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("What do you want to name your goal?");
+        Console.ForegroundColor = ConsoleColor.White;
         _name = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Describe your goal...");
+        Console.ForegroundColor = ConsoleColor.White;
         _description = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("How many points should this goal be?");
+        Console.ForegroundColor = ConsoleColor.White;
         _points = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("How many times should this goal be acomplished?");
+        Console.ForegroundColor = ConsoleColor.White;
         _recordedGoal = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("What should the bonus be on full completion/");
+        Console.ForegroundColor = ConsoleColor.White;
         _bonus = int.Parse(Console.ReadLine());
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Goal added");
     }
     private int _bonus;
